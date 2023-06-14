@@ -120,8 +120,85 @@ const changeVisibility = () => {
   </body>
 </template>
 
-<style scoped>
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap");
+
 * {
+  font-weight: 100;
+  font-family: "Inter", sans-serif;
+  color: #2b2f30;
+}
+
+section {
+  h2 {
+    background-color: #39b983;
+    padding: 10px;
+  }
+
+  .section-title {
+    margin-left: 10px;
+  }
+
+  .section-operation {
+    margin-left: 20px;
+    background-color: lightgray;
+    padding: 1px;
+    padding-left: 10px;
+
+    span,
+    h2 span {
+      background-color: #2b2f30;
+      font-family: "Courier New", Courier, monospace;
+      color: white;
+    }
+
+    ul li {
+      h4 {
+        font-weight: 600;
+      }
+
+      p:first-of-type {
+        font-style: italic;
+      }
+    }
+
+    .active {
+      visibility: hidden;
+    }
+
+    .notActive {
+      background-color: #2b2f30;
+      color: white;
+    }
+
+    .text-container {
+      display: inline-block;
+      padding: 5px;
+      margin-left: 10px;
+
+      p {
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+
+    button {
+      padding: 5px;
+      background-color: #39b983;
+      color: #2b2f30;
+      border: none;
+
+      &:hover {
+        background-color: #2b2f30;
+        color: white;
+      }
+    }
+  }
+}
+</style>
+
+<!-- <style scoped>
+/* * {
   font-weight: 100;
   font-family: "Inter", sans-serif;
   color: #2b2f30;
@@ -186,5 +263,5 @@ section .section-operation button {
 section .section-operation button:hover {
   background-color: #2b2f30;
   color: white;
-}
-</style>
+} */
+</style> -->
