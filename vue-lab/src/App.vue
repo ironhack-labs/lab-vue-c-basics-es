@@ -1,18 +1,22 @@
 <script setup>
 import NavbarComponents from './components/NavbarComponents.vue';
 import FooterComponent from "./components/FooterComponent.vue";
-import { ref, computed } from "vue";
+import { ref } from "vue";
+import { reactive, computed } from 'vue'
 
-// duda 
+//  iteracion 2 
 
-// const product = ref({
-//   name: 'console',
-//   price: 500,
-//   isForSale: true,
-// })
-// const productForSale = computed(()=>{
-//   return product.value.isForSale ? 'yes' : 'no'
-// })
+const user = reactive({
+  name: {
+    first: 'David',
+    last: 'Bigas'
+  },
+  age: 27
+})
+
+const isEighteen = computed(()=>{
+  return user.age > 18 ? 'yes' : 'No'
+})
 
 // iteracion 3
 const myBoolean = true
@@ -52,12 +56,14 @@ const toggleColor = ()=>{
 <!-- iteracion 2 - segunda parte falta  -->
 
   <h2>{{ 2 + 2 }}</h2>
-
+  <h3>Is the user 18 or older?</h3>
+  <span>{{ isEighteen }}</span>
+  
 
 <!-- iteracion 3 renderizado condicional hecho-->
 
-  <h1 v-if="myBoolean">is it true?</h1>
-  <h1 v-show ="myBoolean">is it true?</h1>
+  <h1 v-if="myBoolean">My Boolean is true and is showing</h1>
+  <h1 v-show ="myBoolean">My Boolean is true and is showing</h1>
 
 <!-- iteracion 4 v-for -->
 
@@ -65,8 +71,7 @@ const toggleColor = ()=>{
   <li v-for = 'post in posts'>
     <h2>{{ post.title }}</h2>
     <h3>{{ post.description }}</h3>
-    <p>{{ post.content }}</p>
-    
+    <p>{{ post.content }}</p> 
   </li>
 </ul>
 <br>
@@ -87,5 +92,4 @@ const toggleColor = ()=>{
   background-color: lightblue;
   color: red;
 }
-
 </style>
